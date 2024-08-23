@@ -108,7 +108,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <!-- Add a server to the website form -->
+            <div id="add_canvas_body">
+                <form id="add-server-form">
+                    <div class="form-group">
+                        <label for="serverName">Server Name</label>
+                        <input type="text" id="serverName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serverInvite">Server Invite Link</label>
+                        <input type="text" id="serverInvite" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Server</button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -134,7 +146,8 @@
                                                 src="https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg"
                                                 class="avatar avatar-sm rounded-circle">
                                         </span>
-                                        <span class="flex-fill text-start text-sm font-semibold">Login with Discord</span>
+                                        <span class="flex-fill text-start text-sm font-semibold">Login with
+                                            Discord</span>
                                         <span>
                                             <i class="bi bi-chevron-expand text-white text-opacity-70"></i>
                                         </span>
@@ -163,7 +176,7 @@
                                 <input type="text" class="form-control" placeholder="Search" aria-label="Search">
                             </div>
                         </div>
-                        <div class="row g-3 g-xl-5 mt-1">
+                        <div class="row g-3 g-xl-5 mt-1" id="server-list">
                             <div class="col-lg-4 col-sm-6">
                                 <div class="card shadow-4-hover">
                                     <div class="card-body pb-5">
@@ -193,6 +206,39 @@
             </div>
         </div>
     </main>
+
+    <script>
+        async function fetchServers() {
+            const response = await fetch('/servers');
+            const servers = await response.json();
+
+            const serverListDiv = document.getElementById('server-list');
+            servers.forEach(server => {
+                serverListDiv.innerHTML += `
+              <div class="card shadow-4-hover">
+                <div class="card-body pb-5">
+                  <div class="d-flex align-items-center">
+                    <div class="me-3">
+                      <img alt="Profile Picture" class="avatar rounded-1" src="https://cdn.discordapp.com/icons/${server.id}/${server.icon}.png?size=48">
+                    </div>
+                    <div class="flex-1">
+                      <div class="d-block font-semibold text-sm text-heading">${server.name}</div>
+                      <div class="text-xs text-muted line-clamp-1">${server.member_count} members</div>
+                    </div>
+                    <div class="text-end">
+                      <a href="#server_canvas" class="btn btn-sm btn-neutral rounded-pill" data-bs-toggle="offcanvas">
+                        <i class="bi bi-folder2-open me-1"></i>
+                        <span>View</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+            });
+        }
+
+        fetchServers();
+    </script>
 
     <script src="Assets/Scripts/index.js"></script>
 </body>
