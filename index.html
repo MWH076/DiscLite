@@ -1,0 +1,200 @@
+<!--
+    This code is the intellectual property of the owner.
+    Unauthorized editing, removal, updating, adding, duplicating, selling, or reusing of this code is strictly prohibited.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Disc Lite Servers" property="og:title" />
+    <meta
+        content="Dive into the expansive world of Discord servers with Disc Lite! Whether you're passionate about gaming, love music, or simply enjoy engaging conversations, there's a community waiting just for you. Discover your ideal server and jump into the excitement today!"
+        property="og:description" />
+    <meta content="https://MWH076.github.io/DiscLite/" property="og:url" />
+    <meta content="https://github.com/MWH076/DiscLite/blob/main/logo.png?raw=true" property="og:image" />
+    <meta content="#5C60F5" data-react-helmet="true" name="theme-color" />
+
+    <!-- Tab -->
+    <link rel="icon" type="image/x-icon" href="Assets/Images/Brand/3.png">
+    <title>Disc Lite</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="Assets/Styles/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@webpixels/css@1.2.6/dist/index.css">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <div class="offcanvas offcanvas-end w-full w-lg-1/3" tabindex="-1" id="server_canvas"
+        aria-labelledby="server_canvas_label">
+        <div class="offcanvas-header border-bottom py-5 bg-surface-secondary">
+            <h5 id="server_canvas_label"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row g-0">
+                        <div class="col">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <img alt="Profile Picture" class="avatar rounded-1"
+                                        src="https://cdn.discordapp.com/icons/302094807046684672/24f8bc7ec317e6eaaa0d8352720a7dfe?size=48">
+                                </div>
+                                <div class="flex-1">
+                                    <a href="#"
+                                        class="d-block font-semibold text-sm text-heading text-primary-hover">MINECRAFT</a>
+                                    <div class="text-xs text-muted line-clamp-1">1,428,034 members</div>
+                                </div>
+                                <div class="text-end">
+                                    <a href="#" target="_blank" class="btn btn-sm btn-neutral rounded-pill">
+                                        <i class="bi bi-flag me-1"></i>
+                                        <span>Report</span>
+                                    </a>
+                                    <a href="https://discord.gg/minecraft" target="_blank"
+                                        class="btn btn-sm btn-neutral rounded-pill">
+                                        <i class="bi bi-door-closed me-1"></i>
+                                        <span>Join</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <hr class="my-7">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-4">
+                                    <span class="d-block h6 text-heading mb-0">5.0</span>
+                                    <span class="d-block text-sm text-muted">Rating</span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="d-block h6 text-heading mb-0">1,428,034</span>
+                                    <span class="d-block text-sm text-muted">Online Members</span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="d-block h6 text-heading mb-0">1,428,034</span>
+                                    <span class="d-block text-sm text-muted">Total Members</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <span class="d-block h6 text-heading mb-0">Tags</span>
+                    <span class="d-block text-sm text-muted">Gaming, Minecraft</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <span class="d-block h6 text-heading mb-0">Description</span>
+                    <span class="d-block text-sm text-muted">The official Minecraft discord server!<br><br>Note, this
+                        server may currently be full, but we are working with discord to expand more slots soon!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end w-full w-lg-1/3" tabindex="-1" id="add_canvas"
+        aria-labelledby="add_canvas_label">
+        <div class="offcanvas-header border-bottom py-5 bg-surface-secondary">
+            <h5 id="add_canvas_label"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Add a server to the website form -->
+        </div>
+    </div>
+
+    <main class="py-6 bg-surface-secondary">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-2 vstack gap-3">
+                    <button class="btn btn-sm btn-neutral w-full mb-3 d-md-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-page-filters" aria-expanded="false"
+                        aria-controls="collapse-page-filters">
+                        <i class="bi bi-filter-square me-2"></i>Navigation
+                    </button>
+                    <div class="collapse d-md-block mb-6" id="collapse-page-filters">
+                        <div class="vstack gap-5">
+                            <div class="card gap-5 position-relative">
+                                <div class="dropdown w-full">
+                                    <button
+                                        class="btn-primary d-flex w-full py-3 ps-3 pe-4 align-items-center rounded-3"
+                                        type="button" data-bs-toggle="dropdown">
+                                        <span class="me-3">
+                                            <img alt="..."
+                                                src="https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg"
+                                                class="avatar avatar-sm rounded-circle">
+                                        </span>
+                                        <span class="flex-fill text-start text-sm font-semibold">Login with Discord</span>
+                                        <span>
+                                            <i class="bi bi-chevron-expand text-white text-opacity-70"></i>
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end w-full">
+                                        <div class="dropdown-header">
+                                            <span class="d-block text-sm text-muted mb-1">Signed in as</span>
+                                            <span class="d-block text-heading font-semibold">--</span>
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#"><i
+                                                class="bi bi-box-arrow-left me-3"></i>Login</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <div>
+                        <div class="d-flex flex-column flex-sm-row justify-content-between gap-3">
+                            <div class="input-group input-group-sm input-group-inline">
+                                <span class="input-group-text pe-2">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                            </div>
+                        </div>
+                        <div class="row g-3 g-xl-5 mt-1">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="card shadow-4-hover">
+                                    <div class="card-body pb-5">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-3">
+                                                <img alt="Profile Picture" class="avatar rounded-1"
+                                                    src="https://cdn.discordapp.com/icons/302094807046684672/24f8bc7ec317e6eaaa0d8352720a7dfe?size=48">
+                                            </div>
+                                            <div class="flex-1">
+                                                <div class="d-block font-semibold text-sm text-heading">MINECRAFT</div>
+                                                <div class="text-xs text-muted line-clamp-1">1,428,034 members</div>
+                                            </div>
+                                            <div class="text-end">
+                                                <a href="#server_canvas" class="btn btn-sm btn-neutral rounded-pill"
+                                                    data-bs-toggle="offcanvas">
+                                                    <i class="bi bi-folder2-open me-1"></i>
+                                                    <span>View</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="Assets/Scripts/index.js"></script>
+</body>
+
+</html>
